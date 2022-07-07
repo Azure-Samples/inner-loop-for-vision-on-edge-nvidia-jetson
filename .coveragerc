@@ -1,0 +1,8 @@
+[run]
+omit =
+    */tests/*
+    */main.py
+    */src/edgeinferencing/runtime/*
+
+[report]
+ignore_errors = True

@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "name": "samplemodule",
+            "path": "iot-edge-solution/modules/samplemodule"
+        },
+        {
+            "path": ".",
+            "name": "root",
+        }
+    ],
+    "settings": {}
+}
