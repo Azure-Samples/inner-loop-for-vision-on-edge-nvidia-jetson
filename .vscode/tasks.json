@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "linting",
+            "type": "shell",
+            "command": "flake8 iot-edge-solution"
+        },
+        {
+            "label": "coverage",
+            "type": "shell",
+            "command": "coverage run --source=./iot-edge-solution/modules/samplemodule -m nose2 --plugin nose2.plugins.junitxml --junit-xml --junit-xml-path ./iot-edge-solution/modules/samplemodule/nose2-junit.xml --verbose -s ./iot-edge-solution/modules/samplemodule tests && coverage html -d ./iot-edge-solution/modules/samplemodule/htmlcov && coverage xml -o ./iot-edge-solution/modules/samplemodule/coverage.xml && coverage report"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "python main.py",
+            "options": {
+                "cwd": "${workspaceFolder}/iot-edge-solution/modules/samplemodule"
+            }
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+---
+version: '3'
+services:
+  dev_container:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        VARIANT: 3.6-bullseye
+        CUDA_SUPPORT: nocuda
+    env_file:
+      - ../.env
+    environment:
+      DOCKER_BUILDKIT: 1
+      COMPOSE_DOCKER_CLI_BUILD: 1
+    volumes:
+      - ..:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    runtime: runc
+    devices:
+      - /dev/null:/dev/video0
+    # Add the below section if this application is run on Amd64 machine with nvidia drivers
+    # privileged: true
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [ gpu ]
