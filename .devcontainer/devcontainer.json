@@ -59,6 +59,6 @@
 			"moby": false,
 			"version": "latest"
 		},
-		"git": "latest"
+		"vscode.git": "latest"
 	}
 }
