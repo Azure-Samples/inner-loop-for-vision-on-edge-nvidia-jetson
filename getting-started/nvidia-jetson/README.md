@@ -9,7 +9,7 @@ This quickstart demonstrates how to configure the inner loop setup on an NVIDIA 
 1. Setup Jetson Nano  
 Follow [this](https://developer.NVIDIA.com/embedded/learn/get-started-jetson-nano-devkit) guide to write the Jetson Nano Developer Kit SD Card Image to your Jetson Nano microSD card and setup the device.
 1. Connect video camera to Jetson Nano USB port.
-1. Follow [this](https://docs.docker.com/engine/install/ubuntu/) link to install Docker Compose on Jetson Nano.
+1. Install Docker Compose on Jetson Nano.
 
 ```bash
 sudo apt-get update
