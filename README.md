@@ -171,3 +171,12 @@ VS Code task `coverage` is used to run unit tests inside the dev container and d
 - [Build a Docker image using multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [VS Code tasks](https://code.visualstudio.com/docs/editor/tasks)
 - [VS Code multi-root workspace](https://code.visualstudio.com/docs/editor/workspaces)
+
+## Contributors
+
+- [Ankit Sinha](https://github.com/ankitbko)
+- [Anand Chugh](https://github.com/anandchugh)
+- [Megha Patil](https://github.com/meghapatilcode)
+- [Prabal Deb](https://github.com/prabdeb)
+- [Ren Silva](https://github.com/RenSilvaAU)
+- [Vivek Soni](https://github.com/erviveksoni)
