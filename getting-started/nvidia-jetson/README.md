@@ -73,4 +73,4 @@ sudo apt-get install docker-compose-plugin
 
 1. Open the code in VS Code Workspace inside the dev container using the command  `Remote-Containers: Open Workspace in Container` in Command Palette and choose the `full.code-workspace` file.
 
-  > When you make changes to the dev container [`DockerFile`](.devcontainer\Dockerfile), you need to rebuild the Docker image for the dev container using the `Remote-Containers: Rebuild and Reopen in Container` command on VS Code Command Palette
+  > When you make changes to the dev container [`DockerFile`](.devcontainer/Dockerfile), you need to rebuild the Docker image for the dev container using the `Remote-Containers: Rebuild and Reopen in Container` command on VS Code Command Palette
