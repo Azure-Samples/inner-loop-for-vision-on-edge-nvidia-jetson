@@ -46,6 +46,7 @@ This sample seeks to address the following problems that can arise while develop
 
 This sample inner loop setup helps decouple hardware dependency from the development process, thereby enabling developers who do not have access to edge hardware such as NVIDIA Jetson to still code, debug and run Azure IoT Edge Vision AI solutions on any of the below mentioned hardware platforms:
 
+- ARM64-based-devices with NVIDIA graphics card such as NVIDIA Jetson
 - ARM64-based-devices without NVIDIA graphics card such as Macbook Pro with M1 chip
 - AMD64-based-devices with NVIDIA graphics card
 - AMD64-based-devices without NVIDIA graphics card
@@ -54,7 +55,7 @@ This sample inner loop setup helps decouple hardware dependency from the develop
 
 It also allows developers who have AMD64-based-laptops with NVIDIA graphics card to leverage [CUDA](https://developer.NVIDIA.com/cuda-zone) to accelerate Machine Learning inference.
 
-With this inner loop setup, developers who do not have access to peripheral devices such as video camera or are unable to access a camera device inside the dev container on a Windows or Mac laptop can configure the Vision AI solution to use a [local video file](iot-edge-solution\modules\samplemodule\local_data\demo_video.mkv) to test and debug. This setup also allows developers with a Linux machine to load and access a camera device from within the dev container in the path `/dev/video0`.
+With this inner loop setup, developers who do not have access to peripheral devices such as video camera or are unable to access a camera device inside the dev container on a Windows or Mac laptop can configure the Vision AI solution to use a [local video file](iot-edge-solution/modules/samplemodule/local_data/demo_video.mkv) to test and debug. This setup also allows developers with a Linux machine to load and access a camera device from within the dev container in the path `/dev/video0`.
 
 This inner loop setup uses a VS Code multi-root workspace where each edge module is represented as a separate folder with it's own test configuration settings in `settings.json` and debugger launch configurations in `launch.json`. This enables a developer to seamlessly test and debug different edge modules in one place.
 
@@ -81,7 +82,7 @@ The different build stages used are as follows:
 
 ### Azure IoT Edge Solution
 
-The sample contains an Azure IoT Edge solution that runs a machine learning model to detect texts in the input video stream. The solution uses a text detection model from [PaddlePaddle OCR](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.4/doc/doc_en/models_list_en.md#1-text-detection-model). The model is included as part of this repository in an [ONNX](https://onnx.ai/) format [here](iot-edge-solution\modules\samplemodule\local_data\ch_pp_inf_dynamic.onnx).  
+The sample contains an Azure IoT Edge solution that runs a machine learning model to detect texts in the input video stream. The solution uses a text detection model from [PaddlePaddle OCR](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.4/doc/doc_en/models_list_en.md#1-text-detection-model). The model is included as part of this repository in an [ONNX](https://onnx.ai/) format [here](iot-edge-solution/modules/samplemodule/local_data/ch_pp_inf_dynamic.onnx).  
 Depending on the hardware used, the solution uses one of the below mentioned framework/library to perform model inferencing:
 
 - [ONNX Runtime](https://onnxruntime.ai/docs/) is used to perform model inference on CPU.
@@ -124,20 +125,20 @@ You need the following development tools to run the sample:
 
 The following guides demonstrate how to configure the inner loop setup on different hardwares:
 
-- [Getting Started on AMD64-based-devices with NVIDIA Graphics Card](getting-started\amd64-based-devices-with-NVIDIA-graphics\README.md)
-- [Getting Started on AMD64-based-devices without NVIDIA Graphics Card](getting-started\amd64-based-devices-without-NVIDIA-graphics\README.md)
-- [Getting Started on ARM64-based-devices without NVIDIA Graphics Card](getting-started\arm64-based-devices-without-NVIDIA-graphics\README.md)
-- [Getting Started on NVIDIA Jetson](getting-started\nvidia-jetson\README.md)
+- [Getting Started on AMD64-based-devices with NVIDIA Graphics Card](getting-started/amd64-based-devices-with-NVIDIA-graphics/README.md)
+- [Getting Started on AMD64-based-devices without NVIDIA Graphics Card](getting-started/amd64-based-devices-without-NVIDIA-graphics/README.md)
+- [Getting Started on ARM64-based-devices without NVIDIA Graphics Card](getting-started/arm64-based-devices-without-NVIDIA-graphics/README.md)
+- [Getting Started on NVIDIA Jetson](getting-started/nvidia-jetson/README.md)
 
 ## Test
 
-Unit test cases can be run from the Test Explorer in VS Code workspace. Tests are configured in [settings.json](iot-edge-solution\modules\samplemodule\.vscode\settings.json).
+Unit test cases can be run from the Test Explorer in VS Code workspace. Tests are configured in [settings.json](iot-edge-solution/modules/samplemodule/.vscode/settings.json).
 
 ![VS Code Test Explorer](media/RunUnitTests.png)
 
 ## Debug
 
-Source code for each edge module can be debugged in VS Code workspace. Debug configurations can be added to the [launch.json](iot-edge-solution\modules\samplemodule\.vscode\launch.json) file.
+Source code for each edge module can be debugged in VS Code workspace. Debug configurations can be added to the [launch.json](iot-edge-solution/modules/samplemodule/.vscode/launch.json) file.
 
 ![Debug Configurations](media/DebugConfigurations.png)
 
@@ -171,3 +172,12 @@ VS Code task `coverage` is used to run unit tests inside the dev container and d
 - [Build a Docker image using multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [VS Code tasks](https://code.visualstudio.com/docs/editor/tasks)
 - [VS Code multi-root workspace](https://code.visualstudio.com/docs/editor/workspaces)
+
+## Contributors
+
+- [Ankit Sinha](https://github.com/ankitbko)
+- [Anand Chugh](https://github.com/anandchugh)
+- [Megha Patil](https://github.com/meghapatilcode)
+- [Prabal Deb](https://github.com/prabdeb)
+- [Ren Silva](https://github.com/RenSilvaAU)
+- [Vivek Soni](https://github.com/erviveksoni)
